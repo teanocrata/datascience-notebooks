@@ -25,9 +25,9 @@ $ conda create --prefix py34 python=3.4
 ```
 
 Activate the new environment to use it:
-LINUX, MAC ```$ source activate ./py34```
-WINDOWS ```$ activate .\py34```
+* Linux, Mac ```$ source activate ./py34```
+* Windows ```$ activate .\py34```
 
 Deactivate the current environment
-LINUX, MAC ```$ source deactivate```
-WINDOWS ```$ deactivate```
+* Linux, Mac ```$ source deactivate```
+* Windows ```$ deactivate```
