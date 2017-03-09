@@ -87,3 +87,10 @@ ENV/
 
 # Rope project settings
 .ropeproject
+
+
+# Jupyter anaconda folder
+%USERPROFILE%
+
+# virtualenv folder
+py34
