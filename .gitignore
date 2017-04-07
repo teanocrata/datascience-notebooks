@@ -94,3 +94,6 @@ ENV/
 
 # virtualenv folder
 py34
+philadelphiacrimedata/fields.csv
+philadelphiacrimedata/crime.csv
+philadelphiacrimedata/Boundaries_District.geojson

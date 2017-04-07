@@ -31,3 +31,18 @@ Activate the new environment to use it:
 Deactivate the current environment
 * Linux, Mac ```$ source deactivate```
 * Windows ```$ deactivate```
+
+## Using gmaps for map visualization
+
+Make sure that you have enabled widgets extensions to Jupyter:
+```
+$ jupyter nbextension enable --py --sys-prefix widgetsnbextension
+```
+Install the Python component using:
+```
+$ pip install gmaps
+```
+Then tell Jupyter to load the extension with:
+```
+$ jupyter nbextension enable --py gmaps
+```
