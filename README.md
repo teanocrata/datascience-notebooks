@@ -35,9 +35,62 @@ $ activate .\twitter-example
 Deactivate the current environment
 *   Linux, Mac
 ```bash
-$ source deactivate
+(twitter-example)$ source deactivate
 ```
 *   Windows
 ```bash
-$ deactivate
+(twitter-example)$ deactivate
 ```
+
+## Twiter inference example
+
+The Question: What is the probability that a tweet originating from within Colombia contains at least 1 occurence of the word "yo" with any given composition of accents, and capital and lowercase letters?
+
+### Requirements
+
+PostgreSQL with one 'twitter_inference' database
+Bokeh server
+Twitter keys propertly configured: you can follow [Conda - Saved environment variables](https://conda.io/docs/using/envs.html#saved-environment-variables) to store the secret keys:
+```
+TWITTER_CONSUMER_KEY='Your Twitter Consumer Key (API Key)'
+TWITTER_CONSUMER_SECRET='Your Twitter Consumer Secret (API Secret)'
+TWITTER_ACCESS_TOKEN='Your Twitter access token'
+TWITTER_ACCESS_TOKEN_SECRET='Yout Twitter Access Token Secret'
+```
+You can get it at [Twitter application Management](https://apps.twitter.com)
+
+#### With docker
+
+```bash
+$ docker run --name some-postgres -e POSTGRES_PASSWORD=mysecretpassword -p 5432:5432 -d postgres
+$ docker run --name some-pgadmin4 --link some-postgres:postgres -p 5050:5050 -d fenglc/pgadmin4
+```
+
+### Step by Step
+
+1.  At <http://[pgadmin4-host]:5050> connect to the PostgreSQL and create a new database named 'twitter_inference'
+1.  At <http://[pgadmin4-host]:5050> create a new table 'tweets' in 'twitter_inference' database:
+    ```sql
+    -- Table: public.tweets
+
+    -- DROP TABLE public.tweets;
+
+    CREATE TABLE public.tweets
+    (
+        id_str character varying(50) COLLATE pg_catalog."default",
+        text character varying(200) COLLATE pg_catalog."default"
+    )
+    WITH (
+        OIDS = FALSE
+    )
+    TABLESPACE pg_default;
+
+    ALTER TABLE public.tweets
+        OWNER to postgres;
+    ```
+1.  Start bokeh server
+    1.  Open a new terminal and activate the environment
+    ```bash
+    $ activate twitter-example
+    (twitter-example)$ bokeh serve
+    ```
