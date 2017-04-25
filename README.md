@@ -94,3 +94,4 @@ $ docker run --name some-pgadmin4 --link some-postgres:postgres -p 5050:5050 -d 
     $ activate twitter-example
     (twitter-example)$ bokeh serve
     ```
+1.  Execute cells on twitter-inference-production from Jupyter notebook, last cell open a session to keep our local document in sync with server.
