@@ -88,7 +88,6 @@ ENV/
 # Rope project settings
 .ropeproject
 
-
 # Jupyter anaconda folder
 %USERPROFILE%
 
@@ -97,3 +96,4 @@ py34
 philadelphiacrimedata/fields.csv
 philadelphiacrimedata/crime.csv
 philadelphiacrimedata/Boundaries_District.geojson
+insults-prediction/train.csv
