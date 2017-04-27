@@ -103,3 +103,7 @@ Machine learning model to detect insults in social networks. From [Detecting Ins
 The challenge is to detect when a comment from a conversation would be considered insulting to another participant in the conversation. Samples could be drawn from conversation streams like news commenting sites, magazine comments, message boards, blogs, text messages, etc.
 
 The idea is to create a generalizable single-class classifier which could operate in a near real-time mode, scrubbing the filth of the internet away in one pass.
+
+## Bayesian A/B test
+
+Classic A/B Test, we generate data with a probability and we try to find later these probability.
