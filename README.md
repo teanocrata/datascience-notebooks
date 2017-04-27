@@ -25,12 +25,12 @@ $ conda create --prefix py34 python=3.4
 ```
 
 Activate the new environment to use it:
-* Linux, Mac ```$ source activate ./py34```
-* Windows ```$ activate .\py34```
+*   Linux, Mac ```$ source activate ./py34```
+*   Windows ```$ activate .\py34```
 
 Deactivate the current environment
-* Linux, Mac ```$ source deactivate```
-* Windows ```$ deactivate```
+*   Linux, Mac ```$ source deactivate```
+*   Windows ```$ deactivate```
 
 ## Using gmaps for map visualization
 
@@ -45,4 +45,10 @@ $ pip install gmaps
 Then tell Jupyter to load the extension with:
 ```
 $ jupyter nbextension enable --py gmaps
+```
+
+## With docker
+
+```
+$ docker run -it --rm -p 8888:8888 -v $(pwd):/home/jovyan/work jupyter/datascience-notebook
 ```
